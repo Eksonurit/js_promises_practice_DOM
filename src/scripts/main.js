@@ -68,6 +68,6 @@ const handleError = (message) => {
   body.append(notification);
 };
 
-firstPromise.then(handleSuccess).catch(handleError);
+firstPromise.then(handleSuccess).catch(error => handleError(error.message));
 secondPromise.then(handleSuccess);
 thirdPromise.then(handleSuccess);
